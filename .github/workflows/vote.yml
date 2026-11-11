@@ -21,8 +21,8 @@ jobs:
       - run: pip install httpx[http2]
       - run: python vote.py
         env:
-          WORKERS: '200'
-          DURATION_SECONDS: '270'
+          WORKERS: '400'
+          DURATION_SECONDS: '285'
           TARGET_ID: '569'
           AMOUNT: '1000000000000000'
           STATS_URL: 'https://issued-medline-health-effectively.trycloudflare.com/api/node-stats'
