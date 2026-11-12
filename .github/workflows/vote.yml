@@ -13,6 +13,10 @@ jobs:
   vote:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2, 3, 4]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -26,4 +30,4 @@ jobs:
           TARGET_ID: '569'
           AMOUNT: '1000000000000000'
           STATS_URL: 'https://issued-medline-health-effectively.trycloudflare.com/api/node-stats'
-          NODE_NAME: 'github-actions'
+          NODE_NAME: 'github-actions-${{ matrix.shard }}'
